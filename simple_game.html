@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Practice</title>
+</head>
+<style>
+  body {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    cursor: pointer;
+    transition: 0.8s;
+    margin: 8px ;
+    text-align: center;
+    line-height: 100px;
+  }
+  .win {
+    background: pink;
+    border-radius: 50%;
+    transform: rotate(360deg);
+  }
+  .lose {
+    transfrom: scale(0.9):
+  }
+</style>
+<body>
+
+  <script>
+    'use strict';
+
+    const num = 5;
+    const winner = Math.floor(Math.random() * num); // 0 - 4
+
+    for (let i = 0; i < num; i++) {
+      const div = document.createElement("div");
+      // クラスリストにあるboxクラスをdivクラスへ追加
+      div.classList.add("box");
+
+      // クリックした時にcircleクラスを付けたり外したり
+      div.addEventListener("click", () => {
+        if (i === winner) {
+          div.textContent = "Win!";
+          div.classList.add("win");
+        } else {
+          div.textContent = "Lose!";
+          div.classList.add("lose");
+        }
+      })
+
+      // ブラウザに表示をするためにbodyクラスへ子要素として追加する
+      document.body.appendChild(div);
+    }
+    // 要素を生成するにはcreateElement
+  </script>
+</body>
+</html>

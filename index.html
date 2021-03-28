@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Practice</title>
+</head>
+<style>
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    cursor: pointer;
+  }
+</style>
+<body>
+  <div class="box" id="target"></div>
+
+  <script>
+    'use strict';
+
+    // addEventListenerとは手前の動作をすると仲の処理が起きるという意味
+    // () => は アロー関数という書き方となります
+    document.getElementById("target").addEventListener("click", () => {
+      document.getElementById("target").style.background = "pink";
+      document.getElementById("target").style.borderRadius = "50%";
+    })
+  </script>
+</body>
+</html>
